@@ -1,18 +1,19 @@
 \section{Recommendations}\label{sec:recommendations}
-
-\subsection{Technical Recommendations}\label{sec:recommendations_technical}
+%
+% \subsection{Technical Recommendations}\label{sec:recommendations_technical}
 
 In addition to establishing guidelines for the HEP community, recommendations of software citation best practices and supported tooling aids in community adoption of guidelines.
-
-\textbf{TODO: REVISE AND FINISH}\\
-Use of Zenodo as a long term archive of source code provides automated DOI generation for each release of the software.
-Adopting the CITATION File Format as a common standard and adding \texttt{CITATION.cff} files to all software project version control repositories provides multiple technical boons.
-As \texttt{CITATION.cff} files are written in YAML they offer a both human- and machine-readable file format with a well defined, versioned schema, which is programmatically convertible to other citation formats (i.e., BibTeX, CodeMeta, EndNote, RIS, schema.org, Zenodo, APA) through tooling.
-\texttt{CITATION.cff} has also been adopted by Zenodo, GitHub, and GitLab, providing accessibility and portability.
-
 There has been historical precedent in HEP for tools to provide guidelines for how to cite the software being used by printing it as a runtime banner to standard output, as seen in~\Cref{lst:pythia_banner}.
 This method was developed before citation conventions were established more broadly in the scientific computing community, and modern practices would generally avoid interrupting user logs with this information.
 It is instead preferable to in addition to having a clearly advertized recommended citation in the software documentation to additionally provide citation APIs in the software --- both at the language level and at the command line interface if the software supports one.
+In addition to having clear citation recommendations, it is beneficial to adopt a standardized citation file format.
+A strong choice is the recent Citation File Format~\cite{citation.cff} which is serialized as YAML in a \texttt{CITATION.cff}, as seen in~\Cref{lst:cation.cff}.
+\texttt{CITATION.cff} files have the benefit of being both human- and machine-readable with a well defined, versioned schema.
+Through related tooling \texttt{CITATION.cff} can also be programmatically validated against schemas and converted to other citation formats (e.g., BibTeX, CodeMeta, EndNote, RIS, schema.org, Zenodo, APA).
+\texttt{CITATION.cff} also benefits through supported integration with GitHub\footnote{Providing a ``Cite this repository'' button on a repository with a \texttt{CITATION.cff} file.}, Zenodo, and Zotero, allowing for the citation information to be reliably exported correctly to multiple services through a single file.
+The integration with Zenodo is significant, as the HEP community is already frequent users of Zenodo for long term archival of source code and DOI generation for the source code of software releases.
+Software projects that adopt the use of \texttt{CITATION.cff} for citation information and archive the source code with Zenodo then have a clearly defined toolchain provenance for citation information dissemination.
+Given this, it is recommended that there is a single source of truth for citation information, such as a \texttt{CITATION.cff} file, that is under version control with the software source code and is used to generate all other metadata or forms of citation information by other services.
 
 % Use lstlisting over minted to preserve "-" spacing and number
 \lstinputlisting[
@@ -28,8 +29,6 @@ It is instead preferable to in addition to having a clearly advertized recommend
 % https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted#Captions,_labels_and_the_list_of_listings
 \begin{listing}
  \inputminted{yaml}{src/code/CITATION.cff}
- \caption{Example of a minimal \texttt{CITATON.cff} file.}
+ \caption{Example of a minimal \texttt{CITATON.cff} file using v1.2.0 of the CFF schema.}
  \label{lst:cation.cff}
 \end{listing}
-
-\textbf{REVISE AND FINISH}
