@@ -1,10 +1,10 @@
 \section{Recommendations}\label{sec:recommendations}
 
 In addition to establishing guidelines for the HEP community, recommendations of software citation best practices and supported tooling aids in community adoption of these guidelines.
-A behavior step that can be implemented is for software projects to clearly document a recommended citation and have this information be easily findable anywhere the software source code or distributions are hosted or documented (e.g. version control repositories, public documentation websites, pacakge indexes, archivals).
+A behavior step that can be implemented is for software projects to clearly document a recommended citation and have this information be easily findable anywhere the software source code or distributions are hosted or documented (e.g. version control repositories, public documentation websites, package indexes, archivals).
 There has been historical precedent in HEP for tools to provide recommendations for how to cite the software being used by printing it as a runtime banner to standard output, as seen in~\Cref{lst:pythia_banner}.
 This method was developed before citation conventions were established more broadly in the scientific computing community, and modern practices would generally avoid interrupting user logs with this information.
-It is instead preferable to in addition to having a clearly advertized recommended citation in the software documentation to additionally provide citation APIs in the software --- both at the language level and at the command line interface if the software supports one.
+It is instead preferable to in addition to having a clearly advertised recommended citation in the software documentation to additionally provide citation APIs in the software --- both at the language level and at the command line interface if the software supports one.
 
 In addition to having clear citation recommendations, it is beneficial to adopt a standardized citation file format.
 A strong choice is the recent Citation File Format~\cite{Druskat_Citation_File_Format_2021} which is serialized as YAML in a \texttt{CITATION.cff}, as seen in~\Cref{lst:cation.cff}.
