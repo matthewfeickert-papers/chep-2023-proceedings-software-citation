@@ -2,6 +2,8 @@
 
 \subsection{Technical Recommendations}\label{sec:recommendations_technical}
 
+In addition to establishing guidelines for the HEP community, recommendations of software citation best practices and supported tooling aids in community adoption of guidelines.
+
 \textbf{TODO: REVISE AND FINISH}\\
 Use of Zenodo as a long term archive of source code provides automated DOI generation for each release of the software.
 Adopting the CITATION File Format as a common standard and adding \texttt{CITATION.cff} files to all software project version control repositories provides multiple technical boons.
@@ -9,3 +11,7 @@ As \texttt{CITATION.cff} files are written in YAML they offer a both human- and 
 \texttt{CITATION.cff} has also been adopted by Zenodo, GitHub, and GitLab, providing accessibility and portability.
 
 \textbf{REVISE AND FINISH}
+
+There has been historical precedent in HEP for tools to provide guidelines for how to cite the software being used by printing it as a runtime banner to standard output.
+This method was developed before citation conventions were established more broadly in the scientific computing community, and modern practices would generally avoid interrupting user logs with this information.
+It is instead preferable to in addition to having a clearly advertized recommended citation in the software documentation to additionally provide citation APIs in the software --- both at the language level and at the command line interface if the software supports one.
