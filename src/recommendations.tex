@@ -14,19 +14,22 @@ There has been historical precedent in HEP for tools to provide guidelines for h
 This method was developed before citation conventions were established more broadly in the scientific computing community, and modern practices would generally avoid interrupting user logs with this information.
 It is instead preferable to in addition to having a clearly advertized recommended citation in the software documentation to additionally provide citation APIs in the software --- both at the language level and at the command line interface if the software supports one.
 
-% Use l
+% Use lstlisting over minted to preserve "-" spacing and number
 \lstinputlisting[
     basicstyle=\ttfamily\tiny,
     caption={An example runtime banner printed to standard output from \texttt{PYTHIA 8.2}~\cite{Sjostrand:2014zea} with citation guidelines.},
-    captionpos=b
-]{src/code/pythia_banner.txt}\label{lst:pythia_banner_2}
+    captionpos=b,
+    label={lst:pythia_banner}
+]{src/code/pythia_banner.txt}
 
+% Manually offset the listing number to work with the number of lstlisting
+% BUG: minted and listing don't work together
+\setcounter{listing}{1}
 % https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted#Captions,_labels_and_the_list_of_listings
 \begin{listing}
  \inputminted{yaml}{src/code/CITATION.cff}
  \caption{Example of a minimal \texttt{CITATON.cff} file.}
  \label{lst:cation.cff}
 \end{listing}
-
 
 \textbf{REVISE AND FINISH}
