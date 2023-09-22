@@ -36,7 +36,11 @@ jobs:
           apk add make
           make
 
-    - name: Upload jupyter book
+    - name: List directory
+      run: |
+        ls -lhtra
+
+    - name: Upload pdf
       uses: actions/upload-artifact@v3
       with:
         name: proceedings
