@@ -26,7 +26,7 @@ figures/%.pdf: figures/%.tex
 	rm $(notdir $(basename $@)).*
 
 text:
-	latexmk -$(LATEX) -logfilewarnings -halt-on-error $(FILENAME)
+	latexmk -$(LATEX) -logfilewarnings -halt-on-error -shell-escape $(FILENAME)
 
 document: figures text
 
@@ -37,7 +37,7 @@ clean:
 	rm -f *.aux *.bbl *.blg *.dvi *.idx *.lof *.log *.lot *.toc \
 		*.xdy *.nav *.out *.snm *.vrb *.mp \
 		*.synctex.gz *.brf *.fls *.fdb_latexmk \
-		*.glg *.gls *.glo *.ist *.alg *.acr *.acn
+		*.glg *.gls *.glo *.ist *.alg *.acr *.acn *.pyg
 
 clean_figures:
 	rm -f $(figure_list)
