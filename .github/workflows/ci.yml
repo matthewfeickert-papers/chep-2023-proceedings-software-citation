@@ -34,7 +34,7 @@ jobs:
       with:
         run: |
           apk add make
-          make
+          make document
 
     - name: List directory
       run: |
