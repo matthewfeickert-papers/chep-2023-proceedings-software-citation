@@ -84,8 +84,6 @@ arXiv: deep_clean text
 	# c.f. https://github.com/gpoore/minted/issues/113#issuecomment-223451550
 	mv _minted-$(FILENAME) submit_to_arXiv/_minted-ms
 	sed -i.bak 's/finalizecache/frozencache/' submit_to_arXiv/latex/packages.tex
-	# https://tex.stackexchange.com/questions/661171/package-minted-error-missing-style-definition-for-with-frozencache-when-submitt
-	curl -sL https://raw.githubusercontent.com/gpoore/minted/v2.8/source/minted.sty -o submit_to_arXiv/minted.sty
 
 	mv submit_to_arXiv/$(FILENAME).tex submit_to_arXiv/ms.tex
 
