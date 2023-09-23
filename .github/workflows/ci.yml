@@ -35,6 +35,7 @@ jobs:
         run: |
           apk add make
           make document
+          make arXiv
 
     - name: List directory
       run: |
@@ -45,6 +46,13 @@ jobs:
       with:
         name: proceedings
         path: 'chep_2023_proceedings.pdf'
+
+    - name: Upload arXiv archive
+      if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+      uses: actions/upload-artifact@v3
+      with:
+        name: arXiv
+        path: 'submit_to_arXiv.tar.gz'
 
   deploy:
     environment:
