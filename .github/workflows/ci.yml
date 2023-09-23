@@ -54,6 +54,10 @@ jobs:
           apk add make
           make arXiv
 
+    - name: Unpack archive
+      run: |
+        tar -xzvf submit_to_arXiv.tar.gz
+
     - name: Upload arXiv archive
       # if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
       uses: actions/upload-artifact@v3
