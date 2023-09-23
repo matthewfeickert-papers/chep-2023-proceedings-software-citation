@@ -23,7 +23,6 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    container: atlasamglab/stats-base:root6.28.04
 
     steps:
     - name: Checkout code
