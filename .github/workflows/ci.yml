@@ -46,7 +46,7 @@ jobs:
         path: 'chep_2023_proceedings.pdf'
 
     - name: Build arXiv archive
-      # if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+      if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
       uses: xu-cheng/texlive-action/full@v1
       with:
         run: |
