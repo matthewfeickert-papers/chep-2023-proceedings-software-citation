@@ -54,6 +54,7 @@ jobs:
           make arXiv
 
     - name: Unpack archive
+      if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
       run: |
         tar -xzvf submit_to_arXiv.tar.gz
 
